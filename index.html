@@ -6,38 +6,48 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="landing-page" id="landing">
-    <div class="center-content">
-      <div class="image-placeholder"></div>
-      <h1>Digitālā izdzīvošana Latvijas Universitātē:<br>no pirmās dienas līdz sesijai</h1>
-      <button onclick="scrollToMain()">Start</button>
+
+  <!-- Landing -->
+  <section id="landing">
+    <h1>Digitālā izdzīvošana Latvijas Universitātē:<br>no pirmās dienas līdz sesijai</h1>
+    <button onclick="scrollToMain()">Start</button>
+  </section>
+  
+  <!-- Navigation and Main -->
+  <section id="main">
+    <nav>
+      <button onclick="showCard(0)" class="active">Digitālais sākums</button>
+      <button onclick="showCard(1)">LU sistēmas</button>
+      <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
+      <button onclick="showCard(3)">Laika plānošana</button>
+      <button onclick="showCard(4)">Sesija</button>
+      <button onclick="">THE SUN</button>
+    </nav>
+  
+    <div class="card-container">
+      <div class="card active">
+        <h2>Digitālais sākums: pirmā nedēļa</h2>
+        <p>Pirmās nedēļas laikā ir ļoti svarīgi iepazīties ar lekciju sarakstu...</p>
+      </div>
+      <div class="card">
+        <h2>LU sistēmas</h2>
+        <p>LUIS, Moodle, MyLU... kas tās ir un kā tās lietot?</p>
+      </div>
+      <div class="card">
+        <h2>Mācīšanās tiešsaistē</h2>
+        <p>Padomi veiksmīgai tiešsaistes lekciju pieredzei.</p>
+      </div>
+      <div class="card">
+        <h2>Laika plānošana</h2>
+        <p>Kā sakārtot savu ikdienu un nepalaist garām termiņus.</p>
+      </div>
+      <div class="card">
+        <h2>Sesija</h2>
+        <p>Kas jāzina pirms sesijas? Gatavošanās, stresa vadība, resursi.</p>
+      </div>
     </div>
   </section>
-
-  <!-- Main Section -->
-  <section class="main-page" id="main">
-    <nav>
-      <ul>
-        <li>Digitālais sākums</li>
-        <li>LU sistēmas</li>
-        <li>Mācīšanās tiešsaistē</li>
-        <li>Laika plānošana</li>
-        <li>Sesija</li>
-      </ul>
-      <div class="settings-icon">☀️</div>
-    </nav>
-    <main>
-      <div class="image-placeholder"></div>
-      <section>
-        <h2>Digitālais sākums: pirmā nedēļa</h2>
-        <p>
-          Pirmās nedēļas laikā ir ļoti svarīgi iepazīties ar lekciju sarakstu, ņemot vērā grupu sadalījumu.
-          LUIS sistēmā lekciju saraksts bieži netiek attēlots pareizi, sakarā ar to ieteicams skatīties savas fakultātes mājaslapā.
-        </p>
-      </section>
-    </main>
-  </section>
+  
 
   <script src="script.js"></script>
 </body>
