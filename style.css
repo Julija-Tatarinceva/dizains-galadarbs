@@ -24,7 +24,7 @@ body {
 }
 
 /* NAVIGATION BAR */
-nav {
+nav, footer {
   display: flex;
   justify-content: center;
   gap: 1rem;
@@ -34,7 +34,9 @@ nav {
   top: 0;
   z-index: 10;
 }
-
+footer p {
+  color: var(--color-white);
+}
 nav button {
   background: none;
   border: none;
@@ -100,6 +102,7 @@ nav button.active {
   max-width: 900px;
   margin: auto;
   height: 340px;
+  overflow: hidden; /* Prevent horizontal scrollbars */
 }
 
 .card {
