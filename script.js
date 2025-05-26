@@ -5,7 +5,22 @@ function scrollToMain() {
 let currentIndex = 0;
   const cards = document.querySelectorAll('.card');
   const navButtons = document.querySelectorAll('nav button');
-
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.getElementById('menu-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+  
+    toggleButton.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      console.log("Toggled mobile nav");
+    });
+    document.querySelectorAll('#mobile-nav button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+      });
+    });    
+  });
+  
+  
   function showCard(index) {
     if (index === currentIndex) return;
 
