@@ -21,6 +21,7 @@ html {
 body {
   background-color: var(--color-light-gray);
   color: #333;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 
@@ -174,16 +175,17 @@ nav button.active {
 
 /* MAIN SECTION */
 #main {
-  padding: 3rem 1rem;
+  padding: 1rem 1rem;
+  height: 94.7vh;
 }
 
 .card-container {
   position: relative;
   padding-top: 1%;
   width: 100%;
-  max-width: 900px;
+  max-width: 80vw;
   margin: auto;
-  height: 400px;
+  height: 80vh;
   overflow: hidden; /* Prevent horizontal scrollbars */
 }
 
@@ -252,4 +254,29 @@ nav button.active {
   #mobile-header {
     display: block;
   }
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+/* body.dark-mode nav,
+body.dark-mode footer {
+  background-color: #1e1e1e;
+} */
+
+body.dark-mode .card {
+  background-color: #1c1c1c;
+  color: #f0f0f0;
+}
+
+body.dark-mode nav button {
+  color: #f0f0f0;
+}
+
+body.dark-mode nav button.active {
+  background-color: var(--color-pink);
+  color: white;
 }

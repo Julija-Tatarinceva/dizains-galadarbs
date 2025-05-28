@@ -19,7 +19,13 @@ let currentIndex = 0;
       });
     });    
   });
+  const themeToggle = document.getElementById('theme-toggle');
   
+  function ChangeTheme(){
+    // console.log("hi");
+    document.body.classList.toggle('dark-mode');
+    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+  }
   
   function showCard(index) {
     if (index === currentIndex) return;
