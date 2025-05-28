@@ -19,12 +19,15 @@ let currentIndex = 0;
       });
     });    
   });
-  const themeToggle = document.getElementById('theme-toggle');
+  const themeToggle = document.getElementsById('theme-toggle');
   
   function ChangeTheme(){
     // console.log("hi");
     document.body.classList.toggle('dark-mode');
-    themeToggle.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    const themeButtons = document.querySelectorAll('.theme-toggle');
+  themeButtons.forEach(btn => {
+    btn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+  });
   }
   
   function showCard(index) {
@@ -52,7 +55,7 @@ let currentIndex = 0;
     setTimeout(() => {
       newCard.classList.remove('enter-left', 'enter-right');
       oldCard.classList.remove('exit-left', 'exit-right');
-    }, 400);
+    }, 600);
 
     // Update nav button states
     navButtons.forEach(btn => btn.classList.remove('active'));

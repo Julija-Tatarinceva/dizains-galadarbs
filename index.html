@@ -10,7 +10,7 @@
   <!-- Landing -->
   <section id="landing">
     <h1>Digitālā izdzīvošana Latvijas Universitātē:<br>no pirmās dienas līdz sesijai</h1>
-    <button onclick="scrollToMain()">Start</button>
+    <div class="scroll-arrow" onclick="scrollToMain()"></div>
   </section>
   
   <!-- Navigation and Main -->
@@ -22,7 +22,7 @@
       <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
       <button onclick="showCard(3)">Laika plānošana</button>
       <button onclick="showCard(4)">Sesija</button>
-      <button onclick="ChangeTheme()">☀️</button>
+      <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
     </nav>
   
     <!-- Mobile Navigation -->
@@ -34,7 +34,7 @@
         <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
         <button onclick="showCard(3)">Laika plānošana</button>
         <button onclick="showCard(4)">Sesija</button>
-        <button onclick="ChangeTheme()" id="theme-toggle">☀️</button>
+        <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
       </nav>
     </div>
   

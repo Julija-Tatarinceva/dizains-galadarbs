@@ -24,7 +24,6 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-
 footer {
   display: flex;
   justify-content: center;
@@ -38,25 +37,6 @@ footer {
 footer p {
   color: var(--color-white);
 }
-/* nav button {
-  background: none;
-  border: none;
-  font-size: 1rem;
-  color: var(--color-white);
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-} */
-
-/* nav button:hover {
-  background-color: var(--color-blue-light);
-}
-
-nav button.active {
-  background-color: var(--color-pink);
-  color: var(--color-white);
-} */ 
 /* Desktop Nav Default */
 #desktop-nav {
   display: flex;
@@ -137,8 +117,6 @@ nav button.active {
   background-color: var(--color-light-gray);
 }
 
-
-
 /* LANDING */
 #landing {
   height: 100vh;
@@ -158,19 +136,29 @@ nav button.active {
   max-width: 800px;
 }
 
-#landing button {
-  padding: 12px 24px;
-  font-size: 1rem;
-  background-color: var(--color-pink);
-  color: var(--color-white);
-  border: none;
-  border-radius: 5px;
+.scroll-arrow {
+  width: 100px;
+  height: 100px;
+  border-left: 4px solid var(--color-pink);
+  border-bottom: 4px solid var(--color-pink);
+  transform: rotate(-45deg);
+  /* margin-top: 15rem; */
   cursor: pointer;
-  transition: background-color 0.3s;
+  animation: bounce 1.5s infinite;
+  transition: filter 0.3s ease;
 }
 
-#landing button:hover {
-  background-color: var(--color-blue-light);
+.scroll-arrow:hover {
+  filter: drop-shadow(0 0 4px var(--color-pink)) drop-shadow(0 0 8px var(--color-pink));
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: rotate(-45deg) translateY(0) translateX(0);
+  }
+  50% {
+    transform: rotate(-45deg) translateY(10px) translateX(-10px);
+  }
 }
 
 /* MAIN SECTION */
@@ -178,7 +166,6 @@ nav button.active {
   padding: 1rem 1rem;
   height: 94.7vh;
 }
-
 .card-container {
   position: relative;
   padding-top: 1%;
@@ -199,7 +186,7 @@ nav button.active {
   padding: 2rem;
   opacity: 0;
   transform: translateX(100%);
-  transition: transform 0.4s ease, opacity 0.4s ease;
+  transition: transform 0.6s ease, opacity 0.4s ease;
 }
 
 .card.active {
@@ -223,13 +210,13 @@ nav button.active {
 .card.enter-left {
   opacity: 0;
   transform: translateX(-100%);
-  animation: slideInFromLeft 0.4s forwards;
+  animation: slideInFromLeft 0.6s forwards;
 }
 
 .card.enter-right {
   opacity: 0;
   transform: translateX(100%);
-  animation: slideInFromRight 0.4s forwards;
+  animation: slideInFromRight 0.6s forwards;
 }
 
 @keyframes slideInFromLeft {
@@ -261,11 +248,6 @@ body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
-
-/* body.dark-mode nav,
-body.dark-mode footer {
-  background-color: #1e1e1e;
-} */
 
 body.dark-mode .card {
   background-color: #1c1c1c;
