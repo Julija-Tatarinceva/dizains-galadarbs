@@ -1,3 +1,15 @@
+window.addEventListener('scroll', () => {
+  const overlay = document.querySelector('.blue-overlay');
+  const scrollY = window.scrollY;
+  const viewportHeight = window.innerHeight;
+
+  // Calculate progress (0 to 1)
+  let progress = (scrollY+100) / viewportHeight;
+  if (progress > 1) progress = 1;
+
+  overlay.style.opacity = progress.toFixed(2);
+});
+
 function scrollToMain() {
   document.getElementById('main').scrollIntoView({ behavior: 'smooth' });
 }
@@ -19,7 +31,6 @@ let currentIndex = 0;
       });
     });    
   });
-  const themeToggle = document.getElementsById('theme-toggle');
   
   function ChangeTheme(){
     // console.log("hi");
@@ -63,3 +74,68 @@ let currentIndex = 0;
 
     currentIndex = index;
   }
+  function hideDesktopNav() {
+    const nav = document.getElementById("desktop-nav");
+    nav.classList.add("hide");
+    nav.style.position = "absolute";
+    nav.classList.remove("show");
+    nav.style.visibility = "hidden";
+    console.log("hidden");
+    // Wait for animation to finish
+    setTimeout(() => {
+      if(window.innerWidth<=665)
+        nav.style.display = "none";
+    }, 400); // must match the CSS transition duration (0.5s = 500ms)
+  }
+  
+  function showDesktopNav() {
+    const nav = document.getElementById("desktop-nav");
+    nav.style.position = "";
+    nav.style.visibility = "visible";
+    nav.style.display = "flex";// restore it first so it can animate back
+    
+    // force reflow so browser applies the display change before removing class
+    void nav.offsetWidth;
+    nav.classList.add("show");
+    nav.classList.remove("hide");
+  }
+  function checkViewport() {
+    if (window.innerWidth <= 665) {
+      hideDesktopNav();
+      showMobileNav()
+    } else {
+      hideMobileNav()
+      showDesktopNav();
+    }
+  }
+  function hideMobileNav() {
+    const nav = document.getElementById("mobile-header");
+    nav.classList.add("hide");
+    nav.style.position = "absolute";
+    nav.classList.remove("show");
+    // Wait for animation to finish
+    setTimeout(() => {
+      if(window.innerWidth>665)
+        nav.style.display = "none";
+    }, 300); // must match the CSS transition duration (0.5s = 500ms)
+  }
+  
+  function showMobileNav() {
+    const nav = document.getElementById("mobile-header");
+    nav.style.position = "";
+    nav.style.display = "flex";// restore it first so it can animate back
+    
+    // force reflow so browser applies the display change before removing class
+    void nav.offsetWidth;
+    nav.classList.add("show");
+    nav.classList.remove("hide");
+  }
+
+  
+  // Check once on load
+  checkViewport();
+  
+  // Check on resize
+  window.addEventListener("resize", checkViewport);
+  
+  

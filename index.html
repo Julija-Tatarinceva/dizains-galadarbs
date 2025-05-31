@@ -10,62 +10,66 @@
 
   <!-- Landing -->
   <section id="landing">
+    <div class="blue-overlay"></div>
     <h1>Digitālā izdzīvošana Latvijas Universitātē:<br>no pirmās dienas līdz sesijai</h1>
     <div class="scroll-arrow" onclick="scrollToMain()"></div>
   </section>
-  
-  <!-- Navigation and Main -->
-  <section id="main">
-    <!-- Desktop Navigation -->
-    <nav id="desktop-nav">
-      <button onclick="showCard(0)" class="active">Digitālais sākums</button>
+  <!-- Desktop Navigation -->
+  <nav id="desktop-nav">
+    
+    <button onclick="showCard(0)" class="active">Digitālais sākums</button>
+    <button onclick="showCard(1)">LU sistēmas</button>
+    <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
+    <button onclick="showCard(3)">Laika plānošana</button>
+    <button onclick="showCard(4)">Sesija</button>
+    <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-header">
+    <button id="menu-toggle">&#9776;</button> <!-- Hamburger icon -->
+    <nav id="mobile-nav" class="hidden">
+      <button onclick="showCard(0)">Digitālais sākums</button>
       <button onclick="showCard(1)">LU sistēmas</button>
       <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
       <button onclick="showCard(3)">Laika plānošana</button>
       <button onclick="showCard(4)">Sesija</button>
       <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
     </nav>
-  
-    <!-- Mobile Navigation -->
-    <div id="mobile-header">
-      <button id="menu-toggle">&#9776;</button> <!-- Hamburger icon -->
-      <nav id="mobile-nav" class="hidden">
-        <button onclick="showCard(0)">Digitālais sākums</button>
-        <button onclick="showCard(1)">LU sistēmas</button>
-        <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
-        <button onclick="showCard(3)">Laika plānošana</button>
-        <button onclick="showCard(4)">Sesija</button>
-        <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
-      </nav>
-    </div>
-  
-  
+  </div>
+  <!-- Navigation and Main -->
+  <section id="main">
     <div class="card-container">
       <div class="card active">
         <img src="res/placeholder.png" alt="Meme" width="200" height="200">
+        <div>
         <h2>Digitālais sākums: pirmā nedēļa</h2>
         <p>Pirmās nedēļas laikā ir ļoti svarīgi iepazīties ar lekciju sarakstu...</p>
-      </div>
+      </div></div>
       <div class="card">
         <img src="res/placeholder.png" alt="Meme" width="200" height="200">
+        <div>
         <h2>LU sistēmas</h2>
         <p>LUIS, Moodle, MyLU... kas tās ir un kā tās lietot?</p>
-      </div>
+      </div></div>
       <div class="card">
         <img src="res/placeholder.png" alt="Meme" width="200" height="200">
+        <div>
         <h2>Mācīšanās tiešsaistē</h2>
         <p>Padomi veiksmīgai tiešsaistes lekciju pieredzei.</p>
-      </div>
+      </div></div>
       <div class="card">
         <img src="res/placeholder.png" alt="Meme" width="200" height="200">
+        <div>
         <h2>Laika plānošana</h2>
         <p>Kā sakārtot savu ikdienu un nepalaist garām termiņus.</p>
-      </div>
+      </div></div>
       <div class="card">
         <img src="res/placeholder.png" alt="Meme" width="200" height="200">
+        <div>
         <h2>Sesija</h2>
         <p>Kas jāzina pirms sesijas? Gatavošanās, stresa vadība, resursi.</p>
-      </div>
+      </div></div>
     </div>
   </section>
   
