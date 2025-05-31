@@ -21,8 +21,17 @@ html {
 body {
   background-color: var(--color-light-gray);
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.4s, color 0.4s;
 }
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background-image: url("res/kafija.png");
+  background-size:cover;
+  opacity:0.4;
+  }
 
 footer {
   display: flex;
@@ -216,15 +225,18 @@ footer p {
   background: var(--color-white);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   border-radius: 10px;
-  padding: 2rem;
+  padding: 3rem;
   opacity: 0;
   transform: translateX(100%);
-  transition: transform 0.6s ease, opacity 0.4s ease;
+  transition: transform 0.6s ease, opacity 0.4s ease, background-color 0.2s ease;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
-  max-width: 50%; /* Prevent image overflow */
-  max-height: 50%;
+  max-width: 40%; /* Prevent image overflow */
+  max-height: 70%;
   height: auto;
   width: auto;
   object-fit: contain;
@@ -357,6 +369,10 @@ body.dark-mode {
   background-color: #121212;
   color: #f0f0f0;
 }
+body.dark-mode::before {
+  background-color: #121212;
+  opacity: 0.01;
+}
 
 body.dark-mode .card {
   background-color: #1c1c1c;
@@ -370,4 +386,7 @@ body.dark-mode nav button {
 body.dark-mode nav button.active {
   background-color: var(--color-pink);
   color: white;
+}
+body.dark-mode h2 {
+  color: lightblue;
 }
