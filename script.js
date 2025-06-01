@@ -18,6 +18,10 @@ let currentIndex = 0;
   const cards = document.querySelectorAll('.card');
   const navButtons = document.querySelectorAll('nav button');
   document.addEventListener('DOMContentLoaded', () => {
+    const darkMode = localStorage.getItem("darkMode");
+    if (darkMode === "true") {
+      document.body.classList.add("dark-mode");
+    }
     const toggleButton = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
   
@@ -39,6 +43,8 @@ let currentIndex = 0;
   themeButtons.forEach(btn => {
     btn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
   });
+  const isDark = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDark ? "true" : "false");
   }
   
   function showCard(index) {
@@ -83,7 +89,7 @@ let currentIndex = 0;
     console.log("hidden");
     // Wait for animation to finish
     setTimeout(() => {
-      if(window.innerWidth<=665)
+      if(window.innerWidth<=900)
         nav.style.display = "none";
     }, 400); // must match the CSS transition duration (0.5s = 500ms)
   }
@@ -100,7 +106,7 @@ let currentIndex = 0;
     nav.classList.remove("hide");
   }
   function checkViewport() {
-    if (window.innerWidth <= 665) {
+    if (window.innerWidth <= 900) {
       hideDesktopNav();
       showMobileNav()
     } else {
@@ -115,7 +121,7 @@ let currentIndex = 0;
     nav.classList.remove("show");
     // Wait for animation to finish
     setTimeout(() => {
-      if(window.innerWidth>665)
+      if(window.innerWidth>900)
         nav.style.display = "none";
     }, 300); // must match the CSS transition duration (0.5s = 500ms)
   }
