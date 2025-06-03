@@ -5,6 +5,9 @@
   <title>Digitālā izdzīvošana LU</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -22,7 +25,7 @@
     <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
     <button onclick="showCard(3)">Laika plānošana</button>
     <button onclick="showCard(4)">Sesija</button>
-    <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
+    <button onclick="ChangeTheme()" class="theme-toggle"><p class="icon">☀️</p></button>
   </nav>
 
   <!-- Mobile Navigation -->
@@ -34,7 +37,7 @@
       <button onclick="showCard(2)">Mācīšanās tiešsaistē</button>
       <button onclick="showCard(3)">Laika plānošana</button>
       <button onclick="showCard(4)">Sesija</button>
-      <button onclick="ChangeTheme()" class="theme-toggle">☀️</button>
+      <button onclick="ChangeTheme()" class="theme-toggle"><p class="icon">☀️</p></button>
     </nav>
   </div>
   <!-- Navigation and Main -->
@@ -42,14 +45,14 @@
     <div class="card-container">
       <div class="card-wrapper">
       <div class="card active">
-        <img src="res/ekranuznemums_no_eztf_majaslapas.jpg" alt="Meme" width="200" height="200">
+        <img src="res/ekranuznemums_no_eztf_majaslapas.jpg" alt="Ekrānuzņēmums no LU EZTF mājaslapas ar atvērto izvēlni" width="200" height="200">
         <div>
         <h2>Digitālais sākums: pirmā nedēļa</h2>
         <p>Pirmās nedēļas laikā ir ļoti svarīgi iepazīties ar lekciju sarakstu, ņemot vērā grupu sadalījumu. LUIS sistēmā lekciju saraksts bieži netiek attēlots pareizi, sakarā ar to lekciju sarakstu ir ieteicams skatīties savas fakultātes mājaslapā.</p>
         <p>Svarīgi ir arī sekot līdzi, kāda pēc numura ir studiju nedēļa, jo lekciju grafiki bieži vien ir balstīti uz nepāra un pāra nedēļām.</p>
       </div></div>
       <div class="card">
-        <img src="res/estudijas_infopanelis.jpg" alt="Meme" width="200" height="200">
+        <img src="res/estudijas_infopanelis.jpg" alt="Ekrānuzņēmums no LU e-studiju vides infopaneles" width="200" height="200">
         <div>
         <h2>LU sistēmas</h2>
         <p>Divas galvenās sistēmas ir Moodle un LUIS. </p>
@@ -58,23 +61,24 @@
         <p>Padoms: nebombardējiet pasniedzējus Moodle forumā, jo tas daudziem nav iecienītākais saziņas līdzeklis.</p>
       </div></div>
       <div class="card">
-        <img src="res/macisanas_tiessaiste.png" alt="macisanas tiessaiste" width="200" height="200">
+        <img src="res/macisanas_tiessaiste.png" alt="Klēpjdators uz grīdas universitātes gaitenī" width="200" height="200">
         <div>
         <h2>Mācīšanās tiešsaistē</h2>
         <p>Lekcijas dažreiz notiek attālināti, programmā Microsoft Teams. Mūsdienās arī darbs bieži notiek attālināti (īpaši IT speciālistiem), tāpēc pie pašorganizēšanās mājās ir vērts pierast jau no augstskolas.</p>
         <p>Ja lekcijas ir attālinātas, tas nenozīmē, ka lekciju nav un uz tām nav jāiet. Tas nozīmē tikai to, ka lekcijas var apmeklēt sev ērtā laikā. Ārkārtējos gadījumos ir vēl viena attālināto lekciju priekšrocība: daudzas no tām tiek ierakstītas MicrosoftTeams, un ierakstu var noskatīties vēlāk, ja nevar nokļūt uz lekciju.</p>
       </div></div>
       <div class="card">
-        <img src="res/dators_un_klade.png" alt="Meme" width="200" height="200">
+        <img src="res/dators_un_klade.png" alt="Klēpjdators un klade ar piezīmēm uz galda" width="200" height="200">
         <div>
         <h2>Laika plānošana</h2>
         <p>Visi darbi jāpilda laicīgi un pēc iespējas ātrāk pēc materiāla apguves lekcijā, lai tas nepaspētu pazust, bet, gluži pretēji, nostiprinātos galvā. Tas atvieglos dzīvi, kad tuvosies sesija. Var izveidot sev kalendāru ar darba termiņiem, kā arī doties uz Moodle, lai pārbaudītu, vai ir jāiesniedz kāds darbs. Sistēma arī nosūtīs paziņojumu, kad tuvosies darba termiņš.</p>
+      <p>Pēc lekcijām var palikt universitātē un izpildīt uzdotos uzdevumus, lai nostiprinātu apgūto materiālu un ietaupītu laiku nākotnē, netērējot to tēmu apguvei "no nulles" pirms sesijas, kā tas notiek, ja materiālu neapstiprina.</p>
       </div></div>
       <div class="card">
-        <img src="res/sesija_tuvojas.png" alt="Meme" width="200" height="200">
+        <img src="res/sesija_tuvojas.png" alt="Monitora fotoattēls universitātes gaitenī ar tekstu 'Sesija tuvojas' uz ekrāna" width="200" height="200">
         <div>
         <h2>Sesija</h2>
-        <p>Kas jāzina pirms sesijas? Gatavošanās, stresa vadība, resursi.</p>
+        <p>Lai veiksmīgi sagatavotos sesijai, sāc ar plānu – pārskati visus kursus, atzīmē eksāmenu datumus un gatavojies laicīgi. Izdali mācību laiku pa nedēļām, lai izvairītos no pārmērīga stresa pēdējā brīdī. Apkopotās piezīmes un iepriekšējie uzdevumi būs noderīgs resurss. Izmanto Moodle, lai pārliecinātos, vai neesi palaidis garām kādu darbu. Atrodi sev piemērotu mācību vidi un neaizmirsti par atpūtu – laba gulēšana un kustības palīdz koncentrēties un saglabāt mieru. Sagatavošanās ir panākumu atslēga!</p>
       </div></div>
     </div>
   </div>

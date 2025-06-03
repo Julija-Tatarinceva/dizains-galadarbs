@@ -21,6 +21,10 @@ let currentIndex = 0;
     const darkMode = localStorage.getItem("darkMode");
     if (darkMode === "true") {
       document.body.classList.add("dark-mode");
+      const themeButtons = document.querySelectorAll('.icon');
+    themeButtons.forEach(btn => {
+      btn.textContent = '🌙';
+    });
     }
     const toggleButton = document.getElementById('menu-toggle');
     const mobileNav = document.getElementById('mobile-nav');
@@ -36,13 +40,30 @@ let currentIndex = 0;
     });    
   });
   
-  function ChangeTheme(){
-    // console.log("hi");
-    document.body.classList.toggle('dark-mode');
-    const themeButtons = document.querySelectorAll('.theme-toggle');
-  themeButtons.forEach(btn => {
-    btn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+  const toggleButton = document.getElementById('menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  toggleButton.addEventListener('click', () => {
+    mobileNav.classList.toggle('show');
   });
+  
+
+  function ChangeTheme(){
+    document.body.classList.toggle('dark-mode');
+      const themeButtons = document.querySelectorAll('.icon');
+    themeButtons.forEach(btn => {
+      btn.classList.add('animate');
+      btn.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '☀️';
+    });
+    setTimeout(() => {
+      
+      // Animate icon back in
+      themeButtons.forEach(btn => {
+        btn.classList.remove('animate');
+      });
+    }, 300); // should match CSS transition duration
+
+
   const isDark = document.body.classList.contains("dark-mode");
   localStorage.setItem("darkMode", isDark ? "true" : "false");
   }
@@ -86,7 +107,6 @@ let currentIndex = 0;
     nav.style.position = "absolute";
     nav.classList.remove("show");
     nav.style.visibility = "hidden";
-    console.log("hidden");
     // Wait for animation to finish
     setTimeout(() => {
       if(window.innerWidth<=900)

@@ -15,7 +15,8 @@
 
 html {
   scroll-behavior: smooth;
-  font-family: "Segoe UI", Roboto, sans-serif;
+  /* font-family: "Segoe UI", Roboto, sans-serif; */
+  font-family: "Poppins", sans-serif;
   text-align: justify;
 }
 
@@ -65,6 +66,7 @@ footer p {
   background: none;
   border: none;
   font-size: 1rem;
+  font-family: "Poppins", sans-serif;
   color: var(--color-white);
   padding: 0.5rem 1rem;
   cursor: pointer;
@@ -80,7 +82,15 @@ footer p {
   background-color: var(--color-pink);
   color: var(--color-white);
 }
+.icon {
+  transition: transform 0.8s ease, opacity 0.3s ease !important;
+  font-size: 1.5rem;
+}
 
+.icon.animate {
+  transform: rotate(180deg);
+  /* opacity: 0; */
+}
 /* Mobile Nav Default Hidden */
 .hidden {
   display: none !important;
@@ -101,7 +111,10 @@ footer p {
 }
 
 #mobile-nav {
-  display: flex;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.4s ease;
   flex-direction: column;
   background: var(--color-white);
   position: absolute;
@@ -110,9 +123,16 @@ footer p {
   right: 1rem;
   border: 1px solid var(--color-medium-gray);
   border-radius: 8px;
-  padding: 1rem;
+  padding: 0 1rem; /* no vertical padding when closed */
   z-index: 100;
 }
+
+#mobile-nav.show {
+  max-height: 500px; /* enough for all buttons */
+  opacity: 1;
+  padding: 1rem;
+}
+
 
 #mobile-nav button {
   background: none;
@@ -388,7 +408,8 @@ body.dark-mode {
 body.dark-mode::before {
   background-color: #121212;
   background-image: url("res/dark_mode.jpg");
-  opacity: 0.09;
+  opacity: 0.07;
+  filter: blur(2px);
 }
 body.dark-mode .card {
   /* background-color: #1c1c1c; */
