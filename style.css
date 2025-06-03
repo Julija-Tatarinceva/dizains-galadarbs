@@ -111,10 +111,7 @@ footer p {
 }
 
 #mobile-nav {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: max-height 0.5s ease, opacity 0.4s ease;
+  display: flex;
   flex-direction: column;
   background: var(--color-white);
   position: absolute;
@@ -123,16 +120,9 @@ footer p {
   right: 1rem;
   border: 1px solid var(--color-medium-gray);
   border-radius: 8px;
-  padding: 0 1rem; /* no vertical padding when closed */
+  padding: 1rem;
   z-index: 100;
 }
-
-#mobile-nav.show {
-  max-height: 500px; /* enough for all buttons */
-  opacity: 1;
-  padding: 1rem;
-}
-
 
 #mobile-nav button {
   background: none;
