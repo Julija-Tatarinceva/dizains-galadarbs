@@ -215,7 +215,7 @@ footer p {
   position: relative;
   padding-top: 1%;
   overflow-x: hidden; /* allows scrolling if card grows */
-  max-width: 80%;
+  max-width: 67%;
   margin: auto;
   transition: max-width 0.5s ease;
   scrollbar-width: none;
